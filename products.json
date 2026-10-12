@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "name": "Carved Marble Pedestal",
+    "category": "Custom Carving",
+    "description": "Detailed marble carving with ornamental borders and sculpted columns.",
+    "image": "tulsi.jpeg"
+  },
+  {
+    "id": 2,
+    "name": "Carved Marble Mandir",
+    "category": "Mandir",
+    "description": "Decorative marble shrine with an ornate arch and detailed carving.",
+    "image": "mandir.jpeg"
+  },
+  {
+    "id": 3,
+    "name": "Tree of Life Panel",
+    "category": "Wall Art",
+    "description": "Decorative carved panel for interior spaces.",
+    "image": "wall.jpeg"
+  },
+  {
+    "id": 4,
+    "name": "Carved Marble Entrance",
+    "category": "Gurudwara Sahib",
+    "description": "Ornamental marble entrance with arches and columns.",
+    "image": "gurudwara.jpeg"
+  },
+  {
+    "id": 5,
+    "name": "Marble Prayer Niche",
+    "category": "Mosque",
+    "description": "Decorative marble prayer niche and architectural stonework.",
+    "image": "imagemimber.jpeg"
+  }
+]

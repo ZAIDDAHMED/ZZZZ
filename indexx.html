@@ -1,0 +1,944 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Font Awesome CDN for Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+<title>Naseeb Marbles | Marble & Stone</title>
+
+<meta name="description"
+content="Explore marble products, custom carving and natural stone at Naseeb Marbles, Makrana.">
+
+<style>
+/* ========================================
+   NASEEB MARBLES WEBSITE
+   CUSTOMIZE COLORS IN THIS SECTION
+======================================== */
+
+:root {
+  --gold: #d4a64e;
+  --dark: #24221e;
+  --cream: #f8f4eb;
+  --white: #ffffff;
+  --text: #35332e;
+  --muted: #77736b;
+  --green: #20b85a;
+  --radius: 18px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 85px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: var(--text);
+  background: var(--white);
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button, input, select, textarea {
+  font: inherit;
+}
+
+.container {
+  width: min(1150px, 92%);
+  margin: auto;
+}
+
+section {
+  padding: 75px 0;
+}
+
+.section-light {
+  background: var(--cream);
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.section-title h2 {
+  font-family: Georgia, serif;
+  font-size: clamp(30px, 5vw, 43px);
+  margin-bottom: 10px;
+}
+
+.section-title p {
+  color: var(--muted);
+}
+
+/* ========================================
+   NAVIGATION
+======================================== */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255,255,255,.97);
+  border-bottom: 1px solid #e9e1d2;
+}
+
+.navbar {
+  min-height: 78px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.logo {
+  font-family: Georgia, serif;
+  font-size: 25px;
+  font-weight: bold;
+  color: var(--dark);
+}
+
+.logo span {
+  color: var(--gold);
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.nav-links a {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.nav-links a:hover {
+  color: var(--gold);
+}
+
+.menu-btn {
+  display: none;
+  border: 0;
+  background: var(--dark);
+  color: white;
+  padding: 10px 13px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 19px;
+  border: none;
+  border-radius: 30px;
+  background: var(--gold);
+  color: #211b10;
+  font-weight: bold;
+  cursor: pointer;
+  transition: .25s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(.95);
+}
+
+.btn-dark {
+  background: var(--dark);
+  color: white;
+}
+
+.btn-outline {
+  border: 1px solid var(--gold);
+  background: transparent;
+  color: var(--dark);
+}
+
+/* ========================================
+   HOME HERO
+   Change the background image URL here.
+======================================== */
+
+.hero {
+  min-height: 590px;
+  display: flex;
+  align-items: center;
+  color: white;
+
+  background:
+    linear-gradient(90deg,
+      rgba(20,19,17,.88),
+      rgba(20,19,17,.30)),
+    url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1800&q=85")
+    center/cover;
+}
+
+.hero-content {
+  max-width: 720px;
+  padding: 80px 0;
+}
+
+.eyebrow {
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.hero h1 {
+  font-family: Georgia, serif;
+  font-size: clamp(43px, 7vw, 76px);
+  line-height: 1.08;
+  margin: 20px 0;
+}
+
+.hero p {
+  font-size: 18px;
+  max-width: 560px;
+  color: #eeeae3;
+  margin-bottom: 27px;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.hero .btn-outline {
+  color: white;
+  border-color: white;
+}
+
+/* ========================================
+   HIGHLIGHTS
+======================================== */
+
+.highlights {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background: var(--cream);
+}
+
+.highlight {
+  text-align: center;
+  padding: 24px 12px;
+  border-right: 1px solid #e5dccb;
+  font-weight: bold;
+}
+
+/* ========================================
+   PRODUCTS
+======================================== */
+
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+}
+
+.filter-btn {
+  padding: 9px 16px;
+  border-radius: 25px;
+  border: 1px solid #ded5c4;
+  background: white;
+  cursor: pointer;
+}
+
+.filter-btn.active {
+  background: var(--dark);
+  color: white;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.product-card {
+  border: 1px solid #e9e2d7;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: white;
+  transition: .25s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px #00000012;
+}
+
+.product-card img {
+  width: 100%;
+  height: 245px;
+  object-fit: cover;
+  background: var(--cream);
+}
+
+.product-info {
+  padding: 20px;
+}
+
+.product-category {
+  font-size: 12px;
+  color: #967020;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.product-info h3 {
+  font-size: 21px;
+  margin: 7px 0;
+}
+
+.product-info p {
+  color: var(--muted);
+  margin-bottom: 17px;
+}
+
+.product-info .btn {
+  font-size: 13px;
+}
+
+/* ========================================
+   ABOUT / SERVICES
+======================================== */
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+.about-grid img {
+  width: 100%;
+  height: 390px;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+
+.about-grid h2 {
+  font-family: Georgia, serif;
+  font-size: 38px;
+  margin: 12px 0;
+}
+
+.about-grid p {
+  color: var(--muted);
+  margin-bottom: 18px;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.service-card {
+  padding: 27px;
+  border: 1px solid #e9e1d3;
+  border-radius: var(--radius);
+  background: white;
+}
+
+.service-icon {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: #f4e7c8;
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.service-card h3 {
+  margin-bottom: 8px;
+}
+
+.service-card p {
+  color: var(--muted);
+}
+
+/* ========================================
+   GALLERY
+======================================== */
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: .25s;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.02);
+}
+
+/* ========================================
+   CONTACT FORM
+======================================== */
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  gap: 28px;
+}
+
+.contact-card, .form-card {
+  padding: 25px;
+  border: 1px solid #e8e0d2;
+  border-radius: var(--radius);
+  background: white;
+}
+
+.contact-item {
+  margin: 19px 0;
+  overflow-wrap: anywhere;
+}
+
+.contact-item strong {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.field {
+  display: grid;
+  gap: 6px;
+}
+
+.field.full {
+  grid-column: 1 / -1;
+}
+
+.field label {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.field input, .field select, .field textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ddd3c2;
+  border-radius: 10px;
+  background: #fffdf9;
+}
+
+.field textarea {
+  min-height: 105px;
+  resize: vertical;
+}
+
+.map-frame {
+  display: block;
+  width: 100%;
+  height: 350px;
+  border: 0;
+  border-radius: var(--radius);
+  margin-top: 25px;
+}
+
+/* ========================================
+   FOOTER
+======================================== */
+
+footer {
+  background: var(--dark);
+  color: white;
+  padding: 45px 0 20px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr;
+  gap: 30px;
+}
+
+footer h3 {
+  margin-bottom: 13px;
+}
+
+footer p, footer a {
+  color: #d5d0c5;
+}
+
+.footer-links {
+  display: grid;
+  gap: 8px;
+}
+
+.footer-links a:hover {
+  color: var(--gold);
+}
+
+.footer-socials {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.footer-socials a {
+  width: 39px;
+  height: 39px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #ffffff45;
+  border-radius: 50%;
+}
+
+.copyright {
+  border-top: 1px solid #ffffff25;
+  margin-top: 30px;
+  padding-top: 17px;
+  font-size: 13px;
+  color: #c9c3b7;
+}
+
+/* ========================================
+   FLOATING CONTACT ICONS
+======================================== */
+
+.floating-icons {
+  position: fixed;
+  right: 15px;
+  bottom: 20px;
+  display: grid;
+  gap: 10px;
+  z-index: 2000;
+}
+
+.float-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: white;
+  font-size: 19px;
+  font-weight: bold;
+  box-shadow: 0 5px 16px #0003;
+  transition: .2s;
+}
+
+.float-icon:hover {
+  transform: scale(1.1);
+}
+
+.float-whatsapp { background: #20b85a; }
+.float-instagram { background: #c13584; }
+.float-facebook { background: #1877f2; }
+.float-call { background: #333; }
+
+.float-icon span {
+  position: absolute;
+  right: 58px;
+  background: #222;
+  padding: 5px 10px;
+  border-radius: 6px;
+  color: white;
+  font-size: 12px;
+  opacity: 0;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.float-icon:hover span {
+  opacity: 1;
+}
+
+/* ========================================
+   MOBILE RESPONSIVE DESIGN
+======================================== */
+
+@media (max-width: 850px) {
+  .menu-btn {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 78px;
+    left: 0;
+    right: 0;
+    background: white;
+    padding: 20px 4%;
+    box-shadow: 0 10px 15px #00000012;
+  }
+
+  .nav-links.open {
+    display: grid;
+  }
+
+  .product-grid, .service-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .about-grid, .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  section {
+    padding: 55px 0;
+  }
+
+  .hero {
+    min-height: 510px;
+  }
+
+  .hero h1 {
+    font-size: 45px;
+  }
+
+  .highlights {
+    grid-template-columns: 1fr;
+  }
+
+  .highlight {
+    border-bottom: 1px solid #e5dccb;
+  }
+
+  .product-grid, .service-grid, .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-grid img {
+    height: 250px;
+  }
+
+  .form-grid, .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .field.full {
+    grid-column: auto;
+  }
+
+  .floating-icons {
+    right: 9px;
+    bottom: 12px;
+    gap: 8px;
+  }
+
+  .float-icon {
+    width: 43px;
+    height: 43px;
+  }
+
+  .float-icon span {
+    display: none;
+  }
+}
+</style>
+</head>
+
+<body>
+  <div data-section="header" data-file="header.html"></div>
+
+  <main>
+    <div data-section="home" data-file="home.html"></div>
+    <div data-section="products" data-file="products.html"></div>
+    <div data-section="services" data-file="services.html"></div>
+    <div data-section="about" data-file="about.html"></div>
+    <div data-section="gallery" data-file="gallery.html"></div>
+    <div data-section="contact" data-file="contact.html"></div>
+  </main>
+
+  <div data-section="footer" data-file="footer.html"></div>
+
+  <script type="module">
+const sectionSlots = [...document.querySelectorAll("[data-section]")];
+
+await Promise.all(sectionSlots.map(async slot => {
+  const response = await fetch(slot.dataset.file);
+  if (!response.ok) {
+    throw new Error(`Could not load ${slot.dataset.file}`);
+  }
+
+  slot.outerHTML = await response.text();
+}));
+
+const productsResponse = await fetch("products.json");
+if (!productsResponse.ok) {
+  throw new Error("Could not load products.json");
+}
+const PRODUCTS = await productsResponse.json();
+
+/* =========================================
+   CUSTOMIZE YOUR BUSINESS DETAILS HERE
+   Change these values; other sections update
+   automatically where applicable.
+========================================= */
+
+const BUSINESS = {
+
+  // CHANGE BUSINESS NAME
+  name: "Naseeb Marbles",
+
+  // CHANGE PHONE NUMBER
+  phoneDisplay: "+91 95880 10003",
+
+  // WHATSAPP NUMBER: country code + number, digits only
+  whatsapp: "919588010003",
+
+  // CHANGE EMAIL
+  email: "NASEEBMARBLES1@gmail.com",
+
+  // CHANGE FULL BUSINESS ADDRESS
+  address: " Naseeb Marbles, Aadarsh Nagar - Gali No. 1, Near Royal Convent School, Makrana, Didwana-Kuchaman, Rajasthan 341505",
+
+  // CHANGE GOOGLE MAPS LINK
+  mapUrl: "https://www.google.com/maps/search/?api=1&query=Naseeb+Marbles+Makrana+Rajasthan",
+  // ADD YOUR REAL SOCIAL PROFILE LINKS
+  // Do not leave # if you want the links to work.
+  instagram: "#",
+  facebook: "#"
+};
+
+
+/* =========================================
+   WEBSITE FUNCTIONALITY
+========================================= */
+
+// Set business information
+document.getElementById("businessName").textContent = BUSINESS.name;
+document.getElementById("phoneLink").textContent = BUSINESS.phoneDisplay;
+document.getElementById("emailLink").textContent = BUSINESS.email;
+document.getElementById("businessAddress").textContent = BUSINESS.address;
+
+const phone = BUSINESS.phoneDisplay.replace(/[^\d+]/g, "");
+const whatsappMessage = encodeURIComponent(
+  "Hello " + BUSINESS.name + ", I would like to enquire about your marble products."
+);
+const whatsappURL =
+  "https://wa.me/" + BUSINESS.whatsapp + "?text=" + whatsappMessage;
+
+// Set all common links
+document.getElementById("phoneLink").href = "tel:" + phone;
+document.getElementById("emailLink").href = "mailto:" + BUSINESS.email;
+document.getElementById("mapLink").href = BUSINESS.mapUrl;
+
+document.getElementById("footerPhone").href = "tel:" + phone;
+document.getElementById("footerEmail").href = "mailto:" + BUSINESS.email;
+document.getElementById("footerMap").href = BUSINESS.mapUrl;
+
+document.getElementById("floatingCall").href = "tel:" + phone;
+
+[
+  "floatingWhatsApp",
+  "footerWhatsApp"
+].forEach(id => {
+  document.getElementById(id).href = whatsappURL;
+});
+
+[
+  "floatingInstagram",
+  "footerInstagram"
+].forEach(id => {
+  document.getElementById(id).href = BUSINESS.instagram;
+});
+
+[
+  "floatingFacebook",
+  "footerFacebook"
+].forEach(id => {
+  document.getElementById(id).href = BUSINESS.facebook;
+});
+
+// Disable placeholder social links until real links are added
+["floatingInstagram", "footerInstagram",
+ "floatingFacebook", "footerFacebook"].forEach(id => {
+  const link = document.getElementById(id);
+  if (link.getAttribute("href") === "#") {
+    link.style.opacity = ".55";
+    link.title = "Add your social media link in the BUSINESS settings";
+  }
+});
+
+// Current year in footer
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+// Mobile navigation
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+
+menuBtn.addEventListener("click", () => {
+  const opened = navLinks.classList.toggle("open");
+  menuBtn.setAttribute("aria-expanded", String(opened));
+});
+
+navLinks.querySelectorAll("a").forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("open");
+    menuBtn.setAttribute("aria-expanded", "false");
+  });
+});
+
+// Safe text for HTML output
+function safeText(value) {
+  return String(value).replace(/[&<>"']/g, char => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#39;"
+  }[char]));
+}
+
+// Render product cards automatically
+const productGrid = document.getElementById("productGrid");
+const filters = document.getElementById("filters");
+const productSelect = document.getElementById("productSelect");
+
+function renderProducts(category = "All") {
+
+  const visibleProducts = category === "All"
+    ? PRODUCTS
+    : PRODUCTS.filter(p => p.category === category);
+
+  productGrid.innerHTML = visibleProducts.map(p => `
+    <article class="product-card">
+
+      <img
+        src="${safeText(p.image)}"
+        alt="${safeText(p.name)}"
+        loading="lazy">
+
+      <div class="product-info">
+
+        <div class="product-category">
+          ${safeText(p.category)}
+        </div>
+
+        <h3>${safeText(p.name)}</h3>
+
+        <p>${safeText(p.description)}</p>
+
+        <a class="btn"
+          target="_blank"
+          rel="noopener"
+          href="https://wa.me/${encodeURIComponent(BUSINESS.whatsapp)}?text=${encodeURIComponent(
+            "Hello " + BUSINESS.name +
+            ", please share the details and quotation for " + p.name + "."
+          )}">
+          Enquire on WhatsApp
+        </a>
+
+      </div>
+    </article>
+  `).join("");
+}
+
+// Create category filter buttons
+const categories = [
+  "All",
+  ...new Set(PRODUCTS.map(p => p.category))
+];
+
+filters.innerHTML = categories.map((category, index) => `
+  <button
+    type="button"
+    class="filter-btn ${index === 0 ? "active" : ""}"
+    data-category="${safeText(category)}">
+    ${safeText(category)}
+  </button>
+`).join("");
+
+filters.addEventListener("click", event => {
+
+  const button = event.target.closest("[data-category]");
+  if (!button) return;
+
+  filters.querySelectorAll(".filter-btn").forEach(btn => {
+    btn.classList.toggle("active", btn === button);
+  });
+
+  renderProducts(button.dataset.category);
+});
+
+renderProducts();
+
+// Populate enquiry form with products
+PRODUCTS.forEach(product => {
+  const option = document.createElement("option");
+  option.value = product.name;
+  option.textContent = product.name;
+  productSelect.appendChild(option);
+});
+
+// Contact form opens WhatsApp with entered details
+document.getElementById("enquiryForm").addEventListener("submit", event => {
+
+  event.preventDefault();
+
+  const form = new FormData(event.target);
+
+  const message = [
+    "Hello " + BUSINESS.name + ", I would like to enquire.",
+    "",
+    "Name: " + form.get("customerName"),
+    "Phone: " + form.get("customerPhone"),
+    "Product: " + form.get("productSelect"),
+    "Dimensions: " + (form.get("dimensions") || "Not specified"),
+    "Quantity: " + (form.get("quantity") || "Not specified"),
+    "Project Details: " + (form.get("details") || "Not specified")
+  ].join("\n");
+
+  const url =
+    "https://wa.me/" + BUSINESS.whatsapp +
+    "?text=" + encodeURIComponent(message);
+
+  window.open(url, "_blank", "noopener");
+});
+
+// Gallery image click opens the image in a new tab
+document.querySelectorAll(".gallery-grid img").forEach(img => {
+  img.addEventListener("click", () => {
+    window.open(img.src, "_blank", "noopener");
+  });
+});
+</script>
+
+</body>
+</html>

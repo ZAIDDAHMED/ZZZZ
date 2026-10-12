@@ -1,0 +1,76 @@
+<section id="contact">
+  <div class="container">
+    <div class="section-title">
+      <div class="eyebrow">Get In Touch</div>
+      <h2>Contact Us</h2>
+      <p>Send your enquiry directly through WhatsApp.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h3>Business Information</h3>
+        <div class="contact-item">
+          <strong>Business Name</strong>
+          <span id="businessName">Naseeb Marbles</span>
+        </div>
+        <div class="contact-item">
+          <strong>Phone / WhatsApp</strong>
+          <a id="phoneLink" href="tel:+919588010003">+91 95880 10003</a>
+        </div>
+        <div class="contact-item">
+          <strong>Email</strong>
+          <a id="emailLink" href="mailto:info@nassebmarbles.com">info@nassebmarbles.com</a>
+        </div>
+        <div class="contact-item">
+          <strong>Address</strong>
+          <span id="businessAddress">Aadarsh Nagar - Gali No. 1, Near Royal Convent School, Makrana, Didwana-Kuchaman, Rajasthan 341505</span>
+        </div>
+        <a id="mapLink" class="btn btn-dark" target="_blank" rel="noopener">Open Google Maps ↗</a>
+      </div>
+
+      <form class="form-card" id="enquiryForm">
+        <h3 style="margin-bottom:20px">Product Enquiry</h3>
+        <div class="form-grid">
+          <div class="field">
+            <label for="customerName">Your Name *</label>
+            <input id="customerName" name="customerName" required autocomplete="name">
+          </div>
+          <div class="field">
+            <label for="customerPhone">Phone Number *</label>
+            <input id="customerPhone" name="customerPhone" type="tel" required autocomplete="tel">
+          </div>
+          <div class="field full">
+            <label for="productSelect">Product / Service *</label>
+            <select id="productSelect" name="productSelect" required>
+              <option value="">Select a product</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="dimensions">Dimensions</label>
+            <input id="dimensions" name="dimensions" placeholder="Enter dimensions">
+          </div>
+          <div class="field">
+            <label for="quantity">Quantity</label>
+            <input id="quantity" name="quantity" type="number" min="1" placeholder="Quantity">
+          </div>
+          <div class="field full">
+            <label for="details">Project Details</label>
+            <textarea id="details" name="details" placeholder="Write your requirements"></textarea>
+          </div>
+          <div class="field full">
+            <button class="btn" type="submit">Send Enquiry on WhatsApp ↗</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <iframe
+      class="map-frame"
+      id="googleMap"
+      title="Naseeb Marbles location map"
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      src="https://maps.google.com/maps?q=naseeb+marbles+makrana+rajasthan&t=&z=13&ie=UTF8&iwloc=&output=embed">
+    </iframe>
+  </div>
+</section>
